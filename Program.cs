@@ -377,7 +377,7 @@ namespace Scuffed_ZORK
                     Console.WriteLine("You can't just stay silent!");
                     break;
                 case "quit":
-                    Console.WriteLine("Press Any Key to Continue: ");
+                    Console.Write("Press Any Key to Quit: ");
                     Console.ReadKey();
                     Environment.Exit(420);
                     break;
