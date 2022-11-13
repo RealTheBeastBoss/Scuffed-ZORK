@@ -6,7 +6,7 @@ namespace Scuffed_ZORK
 {
     class Program
     {
-        public static Square[,] caveRoomA = new Square[3, 3];
+        public static Square[,] caveRoomA = new Square[3, 3]; // 9 Squares
         public static Square caveRoomA0_0 = new Square(caveRoomA, 1, "There doesn't seem to be anything here.", 0, 0);
         public static Square caveRoomA0_1 = new Square(caveRoomA, 1, "On the wall in front of you, there appears to be a marking depicting a game of Tic Tac Toe:\n" +
             " |O|X\nX|X|O\nO|X|O", 0, 1);
@@ -16,8 +16,8 @@ namespace Scuffed_ZORK
         public static Square caveRoomA1_2 = new Square(caveRoomA, 1, "There is nothing to see here.", 1, 2);
         public static Square caveRoomA2_0 = new Square(caveRoomA, 1, "You look at the wall here and notice writing on the surface that says 'Pray your problems away'. Just some graffiti.", 2, 0);
         public static Square caveRoomA2_1 = new Square(caveRoomA, 1, "You cannot see anything around here.", 2, 1);
-        public static Square caveRoomA2_2 = new Square(caveRoomA, 1, "You see an arrow on the wall pointing downwards.", 2, 2); // 4 Leaves start here
-        public static Square[,] caveRoomB = new Square[4, 6];
+        public static Square caveRoomA2_2 = new Square(caveRoomA, 1, "You see an arrow on the wall pointing downwards.", 2, 2); // 4 Leaves start here 
+        public static Square[,] caveRoomB = new Square[4, 6]; // 24 Squares
         public static Square caveRoomB0_0 = new Square(caveRoomB, 2, "Writing on the wall says, 'Red - Third in Time' What's that, a Doctor Who reference?", 0, 0);
         public static Square caveRoomB0_1 = new Square(caveRoomB, 2, "Nothing here catches your eye.", 0, 1);
         public static Square caveRoomB0_2 = new Square(caveRoomB, 2, "Some writing says, 'Blue - If window was a number'.", 0, 2);
@@ -42,7 +42,7 @@ namespace Scuffed_ZORK
         public static Square caveRoomB3_3 = new Square(caveRoomB, 2, "You find an arrow on the wall pointing upwards.", 3, 3); // Note 8 Above Square
         public static Square caveRoomB3_4 = new Square(caveRoomB, 2, "Scribblings on the wall says, 'It goes in location order, like reading a book'. Confusing, isn't it?", 3, 4);
         public static Square caveRoomB3_5 = new Square(caveRoomB, 2, "This must be the crying corner.", 3, 5);
-        public static Square[,] caveRoomC = new Square[5, 3];
+        public static Square[,] caveRoomC = new Square[5, 3]; // 15 Squares
         public static Square caveRoomC0_0 = new Square(caveRoomC, 3, "There is nothing here.", 0, 0);
         public static Square caveRoomC0_1 = new Square(caveRoomC, 3, "You see a door in the wall.", 0, 1);
         public static Square caveRoomC0_2 = new Square(caveRoomC, 3, "This corner is empty.", 0, 2);
@@ -58,6 +58,22 @@ namespace Scuffed_ZORK
         public static Square caveRoomC4_0 = new Square(caveRoomC, 3, "Looking down, you notice some writing, 'Pray your problems away'. I'm going to call the council soon.", 4, 0);
         public static Square caveRoomC4_1 = new Square(caveRoomC, 3, "The room fades into darkness ahead of you, and you hear some low rumbling ahead.", 4, 1);
         public static Square caveRoomC4_2 = new Square(caveRoomC, 3, "All clear over here.", 4, 2);
+        public static Square[,] caveRoomD = new Square[7, 5]; // 35 Squares
+        public static Square caveRoomD0_0 = new Square(caveRoomD, 4, "", 0, 0);
+        public static Square caveRoomD0_1 = new Square(caveRoomD, 4, "", 0, 1);
+        public static Square caveRoomD0_2 = new Square(caveRoomD, 4, "", 0, 2);
+        public static Square caveRoomD0_3 = new Square(caveRoomD, 4, "", 0, 3);
+        public static Square caveRoomD0_4 = new Square(caveRoomD, 4, "", 0, 4);
+        public static Square caveRoomD1_0 = new Square(caveRoomD, 4, "", 1, 0);
+        public static Square caveRoomD1_1 = new Square(caveRoomD, 4, "", 1, 1);
+        public static Square caveRoomD1_2 = new Square(caveRoomD, 4, "", 1, 2);
+        public static Square caveRoomD1_3 = new Square(caveRoomD, 4, "", 1, 3);
+        public static Square caveRoomD1_4 = new Square(caveRoomD, 4, "", 1, 4);
+        public static Square caveRoomD2_0 = new Square(caveRoomD, 4, "", 2, 0);
+        public static Square caveRoomD2_1 = new Square(caveRoomD, 4, "", 2, 1);
+        public static Square caveRoomD2_2 = new Square(caveRoomD, 4, "", 2, 2);
+        public static Square caveRoomD2_3 = new Square(caveRoomD, 4, "", 2, 3);
+        public static Square caveRoomD2_4 = new Square(caveRoomD, 4, "", 2, 4);
         public static Item leaf = new Item("Leaf", "It smells like old toothpaste.", "You hear rustling as you hold it in your hand.", "That was funny to watch, but it tasted disgusting.", "It is a red leaf with an X embedded in it.");
         public static Item greenKey = new Item("Green Key", "This key unlocks the Green Box.");
         public static Item yellowKey = new Item("Yellow Key", "This key unlocks the Yellow Box.");
@@ -114,7 +130,7 @@ namespace Scuffed_ZORK
         {
             EstablishSquares();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Welcome to Scuffed ZORK! A pseudo-game by Jack Cumbers.\nBased on the game by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.");
+            Console.WriteLine("Welcome to Scuffed ZORK! A pseudo-game by Jack Cumbers, with input from Dan.\nBased on the game by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.");
             Console.WriteLine("");
             Console.Write("Would you like to load your saved game?: ");
             string input = Console.ReadLine().ToLower();
@@ -160,6 +176,7 @@ namespace Scuffed_ZORK
                     Console.Write($"{playerName}, you see before you a cave with seemingly no exit. You quickly scan the walls of the cave and notice two things:\n" +
                         "\t1. A rectangular outline in the stone wall to your northeast.\n\t2. A bunch of marks in the stone occuring in multiple spots along the wall.\n" +
                         "You can't see much other than that the room seems to be strangely square and is about 3m\xB2 with you in the center.\n");
+                    Console.WriteLine("\nEnter your First Action Below:");
                 }
             } else
             {
@@ -377,8 +394,8 @@ namespace Scuffed_ZORK
                     Console.WriteLine("You can't just stay silent!");
                     break;
                 case "quit":
-                    Console.Write("Press Any Key to Quit: ");
-                    Console.ReadKey();
+                    //Console.Write("Press Any Key to Quit: ");
+                    //Console.ReadKey(); Temporary Commenting
                     Environment.Exit(420);
                     break;
                 case "q":
@@ -1391,6 +1408,8 @@ namespace Scuffed_ZORK
             caveRoomC[4, 0] = caveRoomC4_0;
             caveRoomC[4, 1] = caveRoomC4_1;
             caveRoomC[4, 2] = caveRoomC4_2;
+            caveRoomD[0, 0] = caveRoomD0_0; // Room D
+            caveRoomD[0, 1] = caveRoomD0_1;
         }
         public static void CheckRoomCompleted() // Checks the requirements that complete the room the player is in
         {
@@ -1429,7 +1448,7 @@ namespace Scuffed_ZORK
         {
             foreach (Item item in items)
             {
-                if (command == item.itemName.ToLower())
+                if (command.Length >= item.itemName.Length && command.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                 {
                     inventory.Add(item);
                     Console.WriteLine($"{item.itemName} has been given.");
@@ -1560,9 +1579,9 @@ namespace Scuffed_ZORK
         }
         public static void DisplayMap()
         {
-            Console.WriteLine("^ -> You are here.");
-            Console.WriteLine("- -> You have been here before.");
-            Console.WriteLine("  -> You have not been here yet.");
+            Console.WriteLine("'^' You are here.");
+            Console.WriteLine("'-' You have been here before.");
+            Console.WriteLine("' ' You have not been here yet.");
             Console.WriteLine("");
             for (int n = 0; n < playerSquare.room.GetLength(1); n++)
             {
@@ -1639,6 +1658,24 @@ namespace Scuffed_ZORK
                             command = "";
                         }
                     }
+                }
+            }
+            if ((itemName.Length == 4 || itemName.Length == 5) && itemName.Substring(0, 4) == "note")
+            {
+                int noteCount = 0;
+                Note tempItem = null;
+                foreach (Item item in inventory)
+                {
+                    if (item.GetType() == goldNote.GetType())
+                    {
+                        noteCount++;
+                        tempItem = (Note)item;
+                    }
+                }
+                if (noteCount == 1)
+                {
+                    tempItem.ReadNote();
+                    return;
                 }
             }
             foreach (Item item in inventory)
@@ -1836,7 +1873,7 @@ namespace Scuffed_ZORK
         public static void OpenAction(string command)
         {
             string openWord = "a";
-            while (openWord == "a" || openWord == "the" || openWord == "an" || openWord == "up")
+            while (openWord == "a" || openWord == "the" || openWord == "an" || openWord == "up" || openWord == "this")
             {
                 if (command == "")
                 {
@@ -1852,11 +1889,11 @@ namespace Scuffed_ZORK
                     {
                         openWord += c;
                     }
-                    else if (openWord != "a" && openWord != "the" && openWord != "an" && openWord != "up" && openWord != "")
+                    else if (openWord != "a" && openWord != "the" && openWord != "an" && openWord != "up" && openWord != "this" && openWord != "")
                     {
                         openWord += c;
                     }
-                    if (openWord == "a" || openWord == "the" || openWord == "an" || openWord == "up")
+                    if (openWord == "a" || openWord == "the" || openWord == "an" || openWord == "up" || openWord == "this")
                     {
                         try
                         {
@@ -2169,7 +2206,7 @@ namespace Scuffed_ZORK
             }
             foreach (Item item in inventory)
             {
-                if (itemName == item.itemName.ToLower())
+                if (itemName.Length >= item.itemName.Length && itemName.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                 {
                     playerSquare.inventory.Add(item);
                     inventory.Remove(item);
@@ -2268,9 +2305,29 @@ namespace Scuffed_ZORK
                     Console.WriteLine("");
                     return;
                 }
+                if ((itemName.Length == 4 || itemName.Length == 5) && itemName.Substring(0, 4) == "note")
+                {
+                    int noteCount = 0;
+                    Item tempItem = null;
+                    foreach (Item item in playerSquare.box.inventory)
+                    {
+                        if (item.GetType() == goldNote.GetType())
+                        { 
+                            noteCount++;
+                            tempItem = item;
+                        }
+                    }
+                    if (noteCount == 1)
+                    {
+                        inventory.Add(tempItem);
+                        playerSquare.box.inventory.Remove(tempItem);
+                        Console.WriteLine($"Taken {tempItem.itemName} from the box.");
+                        return;
+                    }
+                }
                 foreach (Item item in playerSquare.box.inventory)
                 {
-                    if (itemName == item.itemName.ToLower())
+                    if (itemName.Length >= item.itemName.Length && itemName.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                     {
                         inventory.Add(item);
                         playerSquare.box.inventory.Remove(item);
@@ -2281,9 +2338,29 @@ namespace Scuffed_ZORK
                 Console.WriteLine($"There is not an item called '{itemName}' in the box.");
                 return;
             }
+            if ((itemName.Length == 4 || itemName.Length == 5) && itemName.Substring(0, 4) == "note")
+            {
+                int noteCount = 0;
+                Item tempItem = null;
+                foreach (Item item in playerSquare.inventory)
+                {
+                    if (item.GetType() == goldNote.GetType())
+                    {
+                        noteCount++;
+                        tempItem = item;
+                    }
+                }
+                if (noteCount == 1)
+                {
+                    inventory.Add(tempItem);
+                    playerSquare.inventory.Remove(tempItem);
+                    Console.WriteLine($"Taken {tempItem.itemName}.");
+                    return;
+                }
+            }
             foreach (Item item in playerSquare.inventory)
             {
-                if (itemName == item.itemName.ToLower())
+                if (itemName.Length >= item.itemName.Length && itemName.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                 {
                     inventory.Add(item);
                     playerSquare.inventory.Remove(item);
@@ -2341,7 +2418,7 @@ namespace Scuffed_ZORK
             }
             foreach (Item item in inventory)
             {
-                if (itemName == item.itemName.ToLower())
+                if (itemName.Length >= item.itemName.Length && itemName.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                 {
                     Console.WriteLine(item.smellText);
                     return;
@@ -2397,7 +2474,7 @@ namespace Scuffed_ZORK
             }
             foreach (Item item in inventory)
             {
-                if (itemName == item.itemName.ToLower())
+                if (itemName.Length >= item.itemName.Length && itemName.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                 {
                     Console.WriteLine(item.tasteText);
                     return;
@@ -2453,7 +2530,7 @@ namespace Scuffed_ZORK
             }
             foreach (Item item in inventory)
             {
-                if (itemName == item.itemName.ToLower())
+                if (itemName.Length >= item.itemName.Length && itemName.Substring(0, item.itemName.Length) == item.itemName.ToLower())
                 {
                     Console.WriteLine(item.listenText);
                     return;
@@ -2502,12 +2579,12 @@ namespace Scuffed_ZORK
                     }
                 }
             }
-            if (playerSquare.enemy != null && (itemName == playerSquare.enemy.name.ToLower() || itemName == "enemy"))
+            if (playerSquare.enemy != null && ((itemName.Length >= playerSquare.enemy.name.Length && itemName.Substring(0, playerSquare.enemy.name.Length) == playerSquare.enemy.name.ToLower()) || (itemName.Length >= 5 && itemName.Substring(0, 5) == "enemy")))
             {
                 Console.WriteLine(playerSquare.enemy.examineText);
                 return;
             }
-            if (itemName == "area" || itemName == "here")
+            if (itemName.Length >= 4 && (itemName.Substring(0, 4) == "area" || itemName.Substring(0, 4) == "here"))
             {
                 Console.WriteLine(playerSquare.locationText);
                 if (playerSquare.box != null)
@@ -2529,7 +2606,7 @@ namespace Scuffed_ZORK
             }
             foreach (Item item in inventory)
             {
-                if (item.itemName.ToLower() == itemName)
+                if (itemName.Length >= item.itemName.Length && item.itemName.ToLower() == itemName.Substring(0, item.itemName.Length))
                 {
                     Console.WriteLine(item.examineText);
                     return;
@@ -2614,7 +2691,7 @@ namespace Scuffed_ZORK
             } // At this point, the player has inputted a word that isn't a filler word
             foreach (Item item in inventory)
             {
-                if (item.GetType() == knife.GetType() && item.itemName.ToLower() == itemName) // If the item is a weapon and it is the item the player specified
+                if (item.GetType() == knife.GetType() && itemName.Length >= item.itemName.Length && item.itemName.ToLower() == itemName.Substring(0, item.itemName.Length)) // If the item is a weapon and it is the item the player specified
                 { // We have the weapon that the player wants to attack the enemy with at this point
                     Weapon weapon = (Weapon)item;
                     if (playerEnergy < weapon.nrgCost) // If the player doesn't have enough energy to use the weapon
@@ -2695,7 +2772,7 @@ namespace Scuffed_ZORK
             }
             foreach (Item item in inventory)
             {
-                if (item.GetType() == apple.GetType() && item.itemName.ToLower() == itemName)
+                if (item.GetType() == apple.GetType() && itemName.Length >= item.itemName.Length && item.itemName.ToLower() == itemName.Substring(0, item.itemName.Length))
                 {
                     Food food = (Food)item;
                     food.Eat(null);
@@ -2707,10 +2784,10 @@ namespace Scuffed_ZORK
         }
         public static int RNG(int min, int max)
         {
-            int rnd;
+            int rand;
             Random num = new Random();
-            rnd = num.Next(min, max + 1);
-            return rnd;
+            rand = num.Next(min, max + 1);
+            return rand;
         }
         public static string RandomJumpText()
         {
@@ -2843,13 +2920,6 @@ namespace Scuffed_ZORK
             enemy.energy -= 2;
             playerHealth -= enemy.damage;
             Console.WriteLine($"{enemy.name} attacked you for {enemy.damage} hp.");
-        }
-        public static void AddInventory(params Item[] items) // Adds an undisclosed number of items to the player's inventory
-        {
-            foreach (Item item in items)
-            {
-                inventory.Add(item);
-            }
         }
         public static void SaveGame(string fileName)
         {
