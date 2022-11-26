@@ -74,9 +74,30 @@ namespace Scuffed_ZORK
         public static Square caveRoomD2_2 = new Square(caveRoomD, 4, "", 2, 2);
         public static Square caveRoomD2_3 = new Square(caveRoomD, 4, "", 2, 3);
         public static Square caveRoomD2_4 = new Square(caveRoomD, 4, "", 2, 4);
+        public static Square caveRoomD3_0 = new Square(caveRoomD, 4, "", 3, 0);
+        public static Square caveRoomD3_1 = new Square(caveRoomD, 4, "", 3, 1);
+        public static Square caveRoomD3_2 = new Square(caveRoomD, 4, "", 3, 2);
+        public static Square caveRoomD3_3 = new Square(caveRoomD, 4, "", 3, 3);
+        public static Square caveRoomD3_4 = new Square(caveRoomD, 4, "This room seems to have a creepy atmosphere to it", 3, 4); // Starting Square + Brown Box
+        public static Square caveRoomD4_0 = new Square(caveRoomD, 4, "", 4, 0);
+        public static Square caveRoomD4_1 = new Square(caveRoomD, 4, "", 4, 1);
+        public static Square caveRoomD4_2 = new Square(caveRoomD, 4, "", 4, 2);
+        public static Square caveRoomD4_3 = new Square(caveRoomD, 4, "", 4, 3);
+        public static Square caveRoomD4_4 = new Square(caveRoomD, 4, "", 4, 4);
+        public static Square caveRoomD5_0 = new Square(caveRoomD, 4, "", 5, 0);
+        public static Square caveRoomD5_1 = new Square(caveRoomD, 4, "", 5, 1);
+        public static Square caveRoomD5_2 = new Square(caveRoomD, 4, "", 5, 2);
+        public static Square caveRoomD5_3 = new Square(caveRoomD, 4, "", 5, 3);
+        public static Square caveRoomD5_4 = new Square(caveRoomD, 4, "", 5, 4);
+        public static Square caveRoomD6_0 = new Square(caveRoomD, 4, "", 6, 0);
+        public static Square caveRoomD6_1 = new Square(caveRoomD, 4, "", 6, 1);
+        public static Square caveRoomD6_2 = new Square(caveRoomD, 4, "", 6, 2);
+        public static Square caveRoomD6_3 = new Square(caveRoomD, 4, "", 6, 3);
+        public static Square caveRoomD6_4 = new Square(caveRoomD, 4, "", 6, 4);
         public static Item leaf = new Item("Leaf", "It smells like old toothpaste.", "You hear rustling as you hold it in your hand.", "That was funny to watch, but it tasted disgusting.", "It is a red leaf with an X embedded in it.");
         public static Item greenKey = new Item("Green Key", "This key unlocks the Green Box.");
         public static Item yellowKey = new Item("Yellow Key", "This key unlocks the Yellow Box.");
+        public static Item brownKey = new Item("Brown Key", "This key unlocks the Brown Box.");
         public static Note note1 = new Note("Note 1", "This’ll be a bit more difficult, allow me to help: 'Purple = 9:30AM + 8 hours and 8 minutes. Convert that to 24hr Time'.", null);
         public static Note note2 = new Note("Note 2", "Red - According to Nintendo, what letter stands for Winner?", caveRoomB2_3);
         public static Note note3 = new Note("Note 3", "Blue - The Meaning of Life, divided by (9 + 10!!) / 2. Now take 1 from that.", caveRoomB1_5);
@@ -91,7 +112,7 @@ namespace Scuffed_ZORK
         public static Food magicCarrot = new Food("Magic Carrot", "It tastes like a carrot, but slightly magical.", 2);
         public static Weapon knife = new Weapon("Knife", 3, 2);
         public static Weapon sword = new Weapon("Sword", 4, 3);
-        public static List<Item> items = new List<Item>() { leaf, greenKey, yellowKey, note1, note2, note3, note4, note5, note6, note7, note8, note9, 
+        public static List<Item> items = new List<Item>() { leaf, greenKey, yellowKey, brownKey, note1, note2, note3, note4, note5, note6, note7, note8, note9, 
             goldNote, apple, magicCarrot, knife, sword }; // Every Item in the Game
         public static Box greenBox = new Box("Green Box", caveRoomB2_3, greenKey, /*Box Contents:*/ note2, knife, note4);
         public static Box purpleBox = new Box("Purple Box", caveRoomB1_5, "1738", "This box requires the Purple Unlock Code.", yellowKey, note3, apple);
@@ -99,8 +120,9 @@ namespace Scuffed_ZORK
         public static Box yellowBox = new Box("Yellow Box", caveRoomB1_2, yellowKey, /*Box Contents:*/ note5, note6);
         public static Box redBox = new Box("Red Box", caveRoomB3_0, "mfel", "This box requires the Red Unlock Code.", goldNote);
         public static Box cardboardBox = new Box("Cardboard Box", caveRoomC2_2, (Item)null, /*Box Contents:*/ sword);
-        public static List<Box> boxes = new List<Box>() { greenBox, purpleBox, blueBox, yellowBox, redBox, cardboardBox }; // Every Box in the Game
-        public static Enemy roomC = new Enemy(caveRoomC0_1, RandomName(), RNG(8, 11), 0, RNG(2, 4), note9, magicCarrot, goldNote);
+        public static Box brownBox = new Box("Brown Box", caveRoomD3_4, brownKey, /*Box Contents:*/ goldNote);
+        public static List<Box> boxes = new List<Box>() { greenBox, purpleBox, blueBox, yellowBox, redBox, cardboardBox, brownBox }; // Every Box in the Game
+        public static Enemy roomC = new Enemy(caveRoomC0_1, RandomName(), RNG(9, 10), 0, RNG(2, 4), note9, magicCarrot, goldNote);
         public static List<Enemy> enemies = new List<Enemy>() { roomC }; // Every Enemy in the Game
         public static bool gameOver = false;
         public static string playerName = "null";
@@ -126,6 +148,8 @@ namespace Scuffed_ZORK
         public static bool gameLoaded = false;
         public static List<Item> inventory = new List<Item>();
         public static List<string> reminders = new List<string>();
+        public static List<string> bannedKeys = new List<string>() { "Enter", "Backspace", "Delete", "Escape", "UpArrow", "DownArrow", "LeftArrow", "RightArrow", "Tab",
+                            "Home", "End", "PageDown", "PageUp", "LaunchApp2", "Insert", "Clear", "Spacebar" };
         static void Main(string[] args) // Program runs
         {
             EstablishSquares();
@@ -210,6 +234,7 @@ namespace Scuffed_ZORK
                         if (playerHealth <= 0) // This is if the player died
                         {
                             inCombat = false;
+                            isWaiting = false;
                             switch (gameDifficulty)
                             {
                                 case Difficulty.EASY:
@@ -289,6 +314,7 @@ namespace Scuffed_ZORK
                     {
                         Console.WriteLine("");
                         Console.WriteLine($"There is the {playerSquare.box.boxName} in this area.");
+                        playerSquare.box.hasVisited = true;
                         playerSquare.box.square = playerSquare;
                     }
                     if (playerSquare.inventory.Count > 0)
@@ -394,8 +420,8 @@ namespace Scuffed_ZORK
                     Console.WriteLine("You can't just stay silent!");
                     break;
                 case "quit":
-                    //Console.Write("Press Any Key to Quit: ");
-                    //Console.ReadKey(); Temporary Commenting
+                    Console.Write("Press Any Key to Quit: ");
+                    Console.ReadKey(true);
                     Environment.Exit(420);
                     break;
                 case "q":
@@ -873,9 +899,9 @@ namespace Scuffed_ZORK
                         return;
                     }
                     Console.WriteLine("Here are your reminders:\n");
-                    foreach(string reminder in reminders)
+                    for (int i = 0; i < reminders.Count; i++)
                     {
-                        Console.WriteLine("  - " + reminder);
+                        Console.WriteLine($" {i + 1}: {reminders[i]}");
                     }
                     break;
                 case "hello":
@@ -1077,6 +1103,10 @@ namespace Scuffed_ZORK
                             hasDecided = true;
                         }
                     }
+                    break;
+                case "remove":
+                    endCommand = true;
+                    RemoveReminder(command);
                     break;
             }
         }
@@ -1360,6 +1390,7 @@ namespace Scuffed_ZORK
             caveRoomC0_1.exitSquare = true; // Makes this the Exit Square for Room C
             caveRoomC0_1.enemy = roomC; // Adds an enemy to this square
             caveRoomC2_2.box = cardboardBox; // Adds a box to this square
+            caveRoomD3_4.box = brownBox; // Adds a box to this square
             caveRoomA[0, 0] = caveRoomA0_0; // Room A
             caveRoomA[0, 1] = caveRoomA0_1;
             caveRoomA[0, 2] = caveRoomA0_2;
@@ -1410,6 +1441,39 @@ namespace Scuffed_ZORK
             caveRoomC[4, 2] = caveRoomC4_2;
             caveRoomD[0, 0] = caveRoomD0_0; // Room D
             caveRoomD[0, 1] = caveRoomD0_1;
+            caveRoomD[0, 2] = caveRoomD0_2;
+            caveRoomD[0, 3] = caveRoomD0_3;
+            caveRoomD[0, 4] = caveRoomD0_4;
+            caveRoomD[1, 0] = caveRoomD1_0;
+            caveRoomD[1, 1] = caveRoomD1_1;
+            caveRoomD[1, 2] = caveRoomD1_2;
+            caveRoomD[1, 3] = caveRoomD1_3;
+            caveRoomD[1, 4] = caveRoomD1_4;
+            caveRoomD[2, 0] = caveRoomD2_0;
+            caveRoomD[2, 1] = caveRoomD2_1;
+            caveRoomD[2, 2] = caveRoomD2_2;
+            caveRoomD[2, 3] = caveRoomD2_3;
+            caveRoomD[2, 4] = caveRoomD2_4;
+            caveRoomD[3, 0] = caveRoomD3_0;
+            caveRoomD[3, 1] = caveRoomD3_1;
+            caveRoomD[3, 2] = caveRoomD3_2;
+            caveRoomD[3, 3] = caveRoomD3_3;
+            caveRoomD[3, 4] = caveRoomD3_4;
+            caveRoomD[4, 0] = caveRoomD4_0;
+            caveRoomD[4, 1] = caveRoomD4_1;
+            caveRoomD[4, 2] = caveRoomD4_2;
+            caveRoomD[4, 3] = caveRoomD4_3;
+            caveRoomD[4, 4] = caveRoomD4_4;
+            caveRoomD[5, 0] = caveRoomD5_0;
+            caveRoomD[5, 1] = caveRoomD5_1;
+            caveRoomD[5, 2] = caveRoomD5_2;
+            caveRoomD[5, 3] = caveRoomD5_3;
+            caveRoomD[5, 4] = caveRoomD5_4;
+            caveRoomD[6, 0] = caveRoomD6_0;
+            caveRoomD[6, 1] = caveRoomD6_1;
+            caveRoomD[6, 2] = caveRoomD6_2;
+            caveRoomD[6, 3] = caveRoomD6_3;
+            caveRoomD[6, 4] = caveRoomD6_4;
         }
         public static void CheckRoomCompleted() // Checks the requirements that complete the room the player is in
         {
@@ -1443,6 +1507,46 @@ namespace Scuffed_ZORK
                     return;
                 }
             }
+        }
+        public static void RemoveReminder(string command)
+        {
+            if (reminders.Count == 0)
+            {
+                Console.WriteLine("You don't have any reminders to remove.");
+                return;
+            }
+            string remindChoice = "";
+            int tempNum = -1;
+            bool foundInt = false;
+            foreach (char c in command)
+            {
+                try
+                {
+                    tempNum = Convert.ToInt32(c.ToString());
+                    remindChoice += tempNum.ToString();
+                    foundInt = true;
+                } catch (FormatException)
+                {
+                    if (foundInt)
+                    {
+                        break;
+                    }
+                    continue;
+                }
+            }
+            if (remindChoice == "")
+            {
+                Console.WriteLine("You haven't specified which reminder you want to remove.");
+                return;
+            }
+            tempNum = Convert.ToInt32(remindChoice);
+            if (tempNum < 1 || tempNum > reminders.Count)
+            {
+                Console.WriteLine("The value you selected is not a reminder.");
+                return;
+            }
+            Console.WriteLine($"Removed Reminder: {reminders[tempNum - 1]}");
+            reminders.RemoveAt(tempNum - 1);
         }
         public static void GiveAction(string command)
         {
@@ -1540,6 +1644,9 @@ namespace Scuffed_ZORK
                             break;
                         case "caveroomc":
                             targetRoom = caveRoomC;
+                            break;
+                        case "caveroomd":
+                            targetRoom = caveRoomD;
                             break;
                     }
                 } else if (wordCount == 2)
@@ -1966,10 +2073,12 @@ namespace Scuffed_ZORK
                 } else if (playerSquare.room == caveRoomC)
                 {
                     playerHealth = maxPlayerHealth;
+                    playerSquare = caveRoomD3_4;
+                    row = 3;
+                    column = 4;
                     hasMoved = true;
                     SaveGame("Saved Room");
-                    Console.WriteLine("You win... for now."); // Temporary
-                    ParseAction("quit", ""); // Temporary
+                    return;
                 }
             }
             foreach (Box box in boxes)
@@ -1988,13 +2097,29 @@ namespace Scuffed_ZORK
                 }
                 if (!playerSquare.box.isUnlocked)
                 {
-                    playerSquare.box.hasVisited = true;
                     if (playerSquare.box.unlockType == "keypad")
                     {
                         Console.WriteLine(playerSquare.box.lockedMessage);
                         Console.WriteLine("");
-                        Console.Write("Keypad Entry Panel: ");
-                        string input = Console.ReadLine();
+                        Console.Write("Keypad Entry Panel: ____");
+                        string input = "";
+                        for (int i = 0; i < 4; i++) // Keypad Formatting
+                        {
+                            ConsoleKeyInfo key = Console.ReadKey(true);
+                            if (bannedKeys.Contains(key.Key.ToString()))
+                            {
+                                i--;
+                                continue;
+                            }
+                            Console.Write("\b\b\b\b");
+                            input += key.KeyChar;
+                            Console.Write(input.ToUpper());
+                            for (int x = 0; x < 4 - input.Length; x++)
+                            {
+                                Console.Write("_");
+                            }
+                        }
+                        Console.WriteLine();
                         if (input.ToLower() != playerSquare.box.unlockCode)
                         {
                             Console.WriteLine("Access Denied!");
@@ -2146,6 +2271,14 @@ namespace Scuffed_ZORK
                         return;
                     }
                     Console.WriteLine("What do you mean by Red Box?!");
+                    break;
+                case "brown box":
+                    if (brownBox.hasVisited && playerSquare.room == caveRoomD)
+                    {
+                        Console.WriteLine($"You remember the box's location as Column {brownBox.square.column + 1}, Row {brownBox.square.row + 1}.");
+                        return;
+                    }
+                    Console.WriteLine("What do you mean by Brown Box?!");
                     break;
             }
         }
@@ -3004,6 +3137,16 @@ namespace Scuffed_ZORK
                     tw.WriteLine(item.itemName);
                 }
             }
+            foreach (Square square in caveRoomD)
+            {
+                tw.WriteLine(square.roomComplete); // Is Room Complete
+                tw.WriteLine(square.beenVisited); // Has Player Visited
+                tw.WriteLine(square.inventory.Count); // Inventory Count
+                foreach (Item item in square.inventory) // Inventory
+                {
+                    tw.WriteLine(item.itemName);
+                }
+            }
             tw.Close();
         }
         public static void LoadGame(string fileName)
@@ -3044,6 +3187,9 @@ namespace Scuffed_ZORK
                     break;
                 case "3":
                     playerSquare = caveRoomC[row, column];
+                    break;
+                case "4":
+                    playerSquare = caveRoomD[row, column];
                     break;
             }
             inCombat = bool.Parse(tr.ReadLine()); // If in Combat
@@ -3091,6 +3237,9 @@ namespace Scuffed_ZORK
                         break;
                     case "3":
                         box.square = caveRoomC[otherRow, otherColumn];
+                        break;
+                    case "4":
+                        box.square = caveRoomD[otherRow, otherColumn];
                         break;
                 }
                 box.isUnlocked = bool.Parse(tr.ReadLine()); // Is Box Unlocked
@@ -3164,6 +3313,24 @@ namespace Scuffed_ZORK
                 }
             }
             foreach (Square square in caveRoomC)
+            {
+                square.inventory.Clear();
+                square.roomComplete = bool.Parse(tr.ReadLine()); // Is Room Complete
+                square.beenVisited = bool.Parse(tr.ReadLine()); // Has Player Visited
+                int count = Convert.ToInt32(tr.ReadLine()); // Inventory Count
+                for (int i = 0; i < count; i++) // Inventory
+                {
+                    string name = tr.ReadLine();
+                    foreach (Item item in items)
+                    {
+                        if (name == item.itemName)
+                        {
+                            square.inventory.Add(item);
+                        }
+                    }
+                }
+            }
+            foreach (Square square in caveRoomD)
             {
                 square.inventory.Clear();
                 square.roomComplete = bool.Parse(tr.ReadLine()); // Is Room Complete
